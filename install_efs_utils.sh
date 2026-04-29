@@ -24,7 +24,7 @@ build_and_install_rpm() {
     # Create a temporary directory
     local temp_dir=$(mktemp -d)
     cd "$temp_dir" || exit 1
-    git clone --branch v3.1.0 --depth 1 https://github.com/aws/efs-utils
+    git clone --branch v2.3.2 --depth 1 https://github.com/aws/efs-utils
     cd efs-utils
     make rpm
     sudo yum -y install build/amazon-efs-utils*rpm
@@ -39,7 +39,7 @@ build_and_install_deb() {
     # Create a temporary directory
     local temp_dir=$(mktemp -d)
     cd "$temp_dir" || exit 1
-    git clone --branch v3.1.0 --depth 1 https://github.com/aws/efs-utils
+    git clone --branch v2.3.2 --depth 1 https://github.com/aws/efs-utils
     cd efs-utils
     ./build-deb.sh
     sudo apt-get -y install ./build/amazon-efs-utils*deb
